@@ -25,7 +25,7 @@ class LoginController extends \BaseController {
 	 public function postLogin() {
 		$input = Input::all();
 		//$user_data = array('rut' => Input::get('rut'),'password' => Input::get('password'));
-		if (Auth::attempt(array('rut' => Input::get('rut'),'password' => Input::get('password')))) {
+		if (Auth::attempt(array('rut' => Input::get('rut'),'password' => Input::get('contrasena')))) {
 			if (Auth::user()->rol_fk == 2)
 				return Redirect::to('/');
 		else {
